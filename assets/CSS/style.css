@@ -13,6 +13,8 @@ header {
 body {
     color: var(--Main);
     background-color: var(--Content);
+    font-family: 'Montseratt', sans-serif;
+    text-align: center;
 }
 
 nav {
