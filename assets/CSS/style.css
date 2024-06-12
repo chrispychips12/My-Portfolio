@@ -12,8 +12,21 @@ body {
 
 header {
     text-align: center;
-    position: center;
-    color: var(Main);
-    display: inline-flex;
+    color: var(--Main);
 }
 
+nav {
+    text-align: center;
+    padding: 10px;
+    color: var(--Main);
+}
+
+@media screen and (max-width:900px) {
+    header {
+        color: var(--Secondary)
+    }
+    p {
+        color: var(--Secondary)
+    }
+    
+}
