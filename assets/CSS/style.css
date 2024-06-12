@@ -9,3 +9,11 @@ body {
     color: var(--Main);
     background-color: var(--Primary);
 }
+
+header {
+    text-align: center;
+    position: center;
+    color: var(Main);
+    display: inline-flex;
+}
+
