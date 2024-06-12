@@ -17,6 +17,15 @@ body {
     text-align: center;
 }
 
+a {
+    color: var(--Main);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 nav {
     text-align: center;
     padding: 10px;
@@ -32,6 +41,7 @@ footer {
     padding: 100px;
 }
 
+/* Media queries to change the header, paragraph and main sections once screen resizes smaller */
 @media screen and (max-width:900px) {
     header {
         color: var(--Secondary)
