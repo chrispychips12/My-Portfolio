@@ -1,18 +1,18 @@
 :root {
-    --Main: #333333; 
-    --Primary: #ffffff;
-    --Secondary: #e1f4f3;
-    --Content: #706c61;
-}
-
-body {
-    color: var(--Main);
-    background-color: var(--Primary);
+    --Main: #f0ece2; 
+    --Primary: #dfd3c3;
+    --Secondary: #c7b198;
+    --Content: #596e79;
 }
 
 header {
     text-align: center;
     color: var(--Main);
+}
+
+body {
+    color: var(--Main);
+    background-color: var(--Content);
 }
 
 nav {
@@ -21,11 +21,19 @@ nav {
     color: var(--Main);
 }
 
+p {
+    color: var(--Main)
+
+}
+
 @media screen and (max-width:900px) {
     header {
         color: var(--Secondary)
     }
     p {
+        color: var(--Secondary)
+    }
+    main {
         color: var(--Secondary)
     }
     
