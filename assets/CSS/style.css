@@ -12,7 +12,7 @@ header {
 
 body {
     color: var(--Main);
-    background-color: var(--Content);
+    background: linear-gradient(to bottom, #c7b198, #596e79, #c7b198);
     font-family: 'Montseratt', sans-serif;
     text-align: center;
 }
@@ -26,6 +26,10 @@ nav {
 p {
     color: var(--Main)
 
+}
+
+footer {
+    padding: 100px;
 }
 
 @media screen and (max-width:900px) {
