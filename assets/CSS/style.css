@@ -9,7 +9,7 @@
 header {
     justify-content: space-between;
     color: var(--Main);
-    font-size: large;
+    font-size: 100px;
     letter-spacing: 15px;
 }
 
@@ -18,6 +18,19 @@ body {
     background: linear-gradient(to bottom, #c7b198, #596e79, #c7b198);
     font-family: 'Montseratt', sans-serif;
     text-align: center;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid var(--Main);
+    border-radius: 5px;
+    color: var(--Main);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: grab;
+    transition: background-color 0.3s, color 0.3s;
+
+
 }
 
 /* This section formats the links + also adds a hover feature- 
