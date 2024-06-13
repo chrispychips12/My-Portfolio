@@ -1,5 +1,5 @@
 :root {
-    --Main: #f0ece2; 
+    --Main: #f0ece2;
     --Primary: #dfd3c3;
     --Secondary: #c7b198;
     --Content: #596e79;
@@ -27,7 +27,7 @@ button {
     color: var(--Main);
     padding: 10px 200px;
     font-size: 20px;
-    cursor: grab;
+    cursor: crosshair;
     transition: background-color 0.3s, color 0.3s;
     letter-spacing: 1px;
 }
@@ -68,7 +68,7 @@ p {
 main {
     margin-top: 2%;
     letter-spacing: 2px;
-    
+
 }
 
 
@@ -79,7 +79,7 @@ I've also added a border which I'll remove for the final product
     padding: 10px;
     gap: 20px;
     min-height: 50vh;
-    
+
 
     /*
     border-style: solid; 
@@ -96,7 +96,7 @@ I've also added a border which I'll remove for the final product
 
 
 .card {
-    border-style: solid; 
+    border-style: solid;
     border-width: 0.5px;
     display: inline-block;
     width: 25%;
@@ -106,10 +106,12 @@ I've also added a border which I'll remove for the final product
 .card:hover {
     text-decoration: underline;
     background-color: transparent;
+
 }
 
 footer {
     padding: 100px;
+
 }
 
 /* Media queries to change the header, paragraph and main sections once screen resizes smaller */
@@ -117,13 +119,14 @@ footer {
     header {
         color: var(--Secondary)
     }
+
     p {
         color: var(--Secondary)
     }
+
     main {
         color: var(--Secondary)
     }
-    
 }
 
 /* media query to change for screens*/
@@ -133,7 +136,7 @@ footer {
         font-size: 12vw;
     }
 
-    button { 
+    button {
         font-size: 2.5vw;
         padding: 1.5vw 4vw;
     }
@@ -141,15 +144,12 @@ footer {
 
 @media screen and (max-width: 900px) {
     header h1 {
-        font-size: 10vw; 
+        font-size: 10vw;
     }
 }
 
 @media screen and (max-width: 600px) {
     header h1 {
-        font-size: 8vw; 
-    }    
-   
+        font-size: 8vw;
+    }
 }
-   
-
