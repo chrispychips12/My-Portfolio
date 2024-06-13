@@ -25,12 +25,11 @@ button {
     border: 2px solid var(--Main);
     border-radius: 5px;
     color: var(--Main);
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 200px;
+    font-size: 20px;
     cursor: grab;
     transition: background-color 0.3s, color 0.3s;
-
-
+    letter-spacing: 1px;
 }
 
 /* This section formats the links + also adds a hover feature- 
@@ -39,28 +38,36 @@ Here I'm using the underline feature */
 a {
     color: var(--Main);
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: grab;
+    font-size: 16px;
+    letter-spacing: 3px;
 }
 
 a:hover {
     text-decoration: underline;
+    background-color: transparent;
 }
 
 nav {
     text-align: center;
     padding: 10px;
     color: var(--Main);
-
     word-spacing: 50px;
 
 }
 
 p {
-    color: var(--Main)
+    color: var(--Main);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    display: inline-block;
 
 }
 
 main {
     margin-top: 2%;
+    letter-spacing: 2px;
     
 
 }
@@ -72,6 +79,7 @@ I've also added a border which I'll remove for the final product
 #projects {
     padding: 10px;
     gap: 20px;
+    min-height: 50vh;
 
     /*
     border-style: solid; 
