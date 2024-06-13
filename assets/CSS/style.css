@@ -5,9 +5,12 @@
     --Content: #596e79;
 }
 
+
 header {
-    text-align: center;
+    justify-content: space-between;
     color: var(--Main);
+    font-size: large;
+    letter-spacing: 15px;
 }
 
 body {
@@ -16,6 +19,9 @@ body {
     font-family: 'Montseratt', sans-serif;
     text-align: center;
 }
+
+/* This section formats the links + also adds a hover feature- 
+Here I'm using the underline feature */
 
 a {
     color: var(--Main);
@@ -30,12 +36,53 @@ nav {
     text-align: center;
     padding: 10px;
     color: var(--Main);
+
+    word-spacing: 50px;
+
 }
 
 p {
     color: var(--Main)
 
 }
+
+main {
+    margin-top: 2%;
+    
+
+}
+
+
+/* This section is to add CSS styling + flex to the projects section
+I've also added a border which I'll remove for the final product 
+(This is just so I can see where each section starts) */
+#projects {
+    padding: 10px;
+    gap: 20px;
+
+    /*
+    border-style: solid; 
+    border-width: 1px;
+    */
+}
+
+#flex-container {
+    flex-wrap: wrap;
+    background: black;
+    /* change background to an image */
+
+}
+
+
+.card {
+    border-style: solid; 
+    border-width: 0.5px;
+    display: inline-block;
+    width: 25%;
+
+}
+
+
 
 footer {
     padding: 100px;
