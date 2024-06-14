@@ -164,18 +164,7 @@ footer {
 /* Media queries to change the header,
 paragraph and main sections once screen resizes smaller */
 @media screen and (max-width:900px) {
-    header {
-        color: var(--Secondary)
-    }
-
-    p {
-        color: var(--Secondary)
-    }
-
-    main {
-        color: var(--Secondary)
-    }
-}
+    
 
 /* media query to change for screen sizes- used a mix of VW and %, any comments for
 polishing it up would be great*/
@@ -199,8 +188,21 @@ PLEASE SEE BELOW*/
 }
 
 @media screen and (max-width: 900px) {
-    header h1 {
-        font-size: 10vw;
+    header {
+        color: var(--Content)
+    }
+
+    p {
+        color: var(--Content)
+    }
+
+    main {
+        color: var(--Secondary)
+    }
+}
+    h2 {
+        font-size: 5vw;
+        color: var(--Content)
     }
 }
 
