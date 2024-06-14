@@ -4,6 +4,7 @@
     --Secondary: #c7b198;
     --Content: #596e79;
 }
+
 /*main color scheme for the portfolio */
 
 header {
@@ -80,7 +81,7 @@ main {
 main img {
     width: 30%;
     height: 'auto';
-    clip-path: circle(20vw); 
+    clip-path: circle(20vw);
     /*researched this element as my photo was way too big for the screen*/
     opacity: 50%;
 }
