@@ -79,7 +79,7 @@ I've also added a border which I'll remove for the final product
     padding: 10px;
     gap: 20px;
     min-height: 50vh;
-    
+
 
 
     /*
@@ -101,7 +101,7 @@ I've also added a border which I'll remove for the final product
     border-width: 0.5px;
     display: inline-block;
     width: 25%;
-    
+
 }
 
 .card img {
@@ -113,7 +113,7 @@ I've also added a border which I'll remove for the final product
 .card:hover {
     text-decoration: underline;
     background-color: transparent;
-    
+
 
 }
 
@@ -122,7 +122,7 @@ I've also added a border which I'll remove for the final product
 }
 
 input {
-    background-color: var(--Main) ;
+    background-color: var(--Main);
     border-radius: 5px;
     border-width: 1px;
     justify-content: space-evenly;
@@ -130,7 +130,7 @@ input {
 }
 
 textarea {
-    background-color: var(--Main) ;
+    background-color: var(--Main);
     border-radius: 5px;
     border-width: 1px;
 }
@@ -140,7 +140,8 @@ footer {
 
 }
 
-/* Media queries to change the header, paragraph and main sections once screen resizes smaller */
+/* Media queries to change the header,
+paragraph and main sections once screen resizes smaller */
 @media screen and (max-width:900px) {
     header {
         color: var(--Secondary)
@@ -156,6 +157,12 @@ footer {
 }
 
 /* media query to change for screens*/
+/*You'll need to update the CSS so that it 
+contains media queries to make the page responsive. 
+When the page width is less than 768px, 
+the portfolio columns should stack and be the same height.
+
+PLEASE SEE BELOW*/
 
 @media screen and (max-width: 1200px) {
     header h1 {
@@ -178,7 +185,8 @@ footer {
     header h1 {
         font-size: 8vw;
     }
-    .card{
+
+    .card {
         width: 100%;
         margin-bottom: 20px;
     }
