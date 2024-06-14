@@ -4,7 +4,7 @@
     --Secondary: #c7b198;
     --Content: #596e79;
 }
-
+/*main color scheme for the portfolio */
 
 header {
     justify-content: space-between;
@@ -16,7 +16,10 @@ header {
 body {
     color: var(--Main);
     background: linear-gradient(to bottom, #c7b198, #596e79, #c7b198);
+    /*found the linear backgroud option through research, and by playing around 
+    with the background options on VS code, added for design purposes */
     font-family: 'Montseratt', sans-serif;
+    /*found through w3 schools. externally linked in HTML */
     text-align: center;
 }
 
@@ -28,6 +31,7 @@ button {
     padding: 10px 200px;
     font-size: 20px;
     cursor: crosshair;
+    /* found cross hair through cursor options */
     transition: background-color 0.3s, color 0.3s;
     letter-spacing: 1px;
 }
@@ -74,14 +78,11 @@ main {
 
 /* This section is to add CSS styling + flex to the projects section
 I've also added a border which I'll remove for the final product 
-(This is just so I can see where each section starts) */
+(This is just so I can see where each section starts and finishes) */
 #project-section {
     padding: 10px;
     gap: 20px;
     min-height: 50vh;
-
-
-
     /*
     border-style: solid; 
     border-width: 1px;
@@ -95,7 +96,7 @@ I've also added a border which I'll remove for the final product
 
 }
 
-
+/* figure out how to add hover effect on images for more functionality */
 .card {
     border-style: solid;
     border-width: 0.5px;
@@ -108,6 +109,9 @@ I've also added a border which I'll remove for the final product
     flex-wrap: wrap;
     width: 100%;
     display: inline-block;
+    /*You'll need to update the CSS so that it contains media queries to make the page responsive. 
+    When the page width is less than 768px, 
+    the portfolio columns should stack and be the same height. */
 }
 
 .card:hover {
@@ -156,7 +160,9 @@ paragraph and main sections once screen resizes smaller */
     }
 }
 
-/* media query to change for screens*/
+/* media query to change for screen sizes- used a mix of VW and %, any comments for
+polishing it up would be great*/
+
 /*You'll need to update the CSS so that it 
 contains media queries to make the page responsive. 
 When the page width is less than 768px, 
