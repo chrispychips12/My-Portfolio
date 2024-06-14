@@ -77,9 +77,10 @@ main {
 
 /*todo: add hover feature on image */
 main img {
-    width: 50%;
+    width: 30%;
     height: 'auto';
-    clip-path: circle(20vw);
+    clip-path: circle(20vw); 
+    /*researched this element as my photo was way too big for the screen*/
     opacity: 50%;
 }
 
