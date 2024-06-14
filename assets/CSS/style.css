@@ -75,7 +75,8 @@ main {
 
 }
 
-/*todo: add hover feature on image */
+/*todo: add hover feature on image 
+- looks like I can use opacity + a hover to manipulate the image */
 main img {
     width: 30%;
     height: 'auto';
