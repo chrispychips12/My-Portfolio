@@ -37,3 +37,16 @@ Some of these include:
   - at 768px, the .card section will stack, and header font size will also change
  
   I hope this gives you a good understanding of the features I've added so far! I've also left some notes in the files of the other features I wish to explore and add on in the future (for now).
+
+SOURCES + ACKNOWLEDGEMENTS 
+
+Tutorials on:
+-https://www.w3schools.com
+-https://cheatsheets.shecodes.io
+-https://developer.mozilla.org/en-US/
+-freecodecamp.org
+-mimo
+
+Christopher Concepcion @github.com/chrispychips12
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
