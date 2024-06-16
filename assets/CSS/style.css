@@ -81,9 +81,9 @@ main {
 main img {
     width: 30%;
     height: 'auto';
-    clip-path: circle(20vw);
+    clip-path: circle(14vw);
     /*researched this element as my photo was way too big for the screen*/
-    opacity: 50%;
+    opacity: 75%;
 }
 
 
@@ -126,8 +126,7 @@ I've also added a border which I'll remove for the final product
     flex-wrap: wrap;
     width: 100%;
     display: inline-block;
-    /*You'll need to update the CSS so that it contains media queries to make the page responsive. 
-    When the page width is less than 768px, 
+    /* When the page width is less than 768px, 
     the portfolio columns should stack and be the same height. */
 }
 
@@ -193,7 +192,7 @@ PLEASE SEE BELOW*/
     }
 
     p {
-        color: var(--Content)
+        color: var(--Secondary)
     }
 
     main {
@@ -202,17 +201,28 @@ PLEASE SEE BELOW*/
 }
     h2 {
         font-size: 5vw;
-        color: var(--Content)
+        color: var(--Secondary)
     }
 }
 
 @media screen and (max-width: 768px) {
     header h1 {
         font-size: 5vw;
+        color: var(--Main)
     }
 
     .card {
         width: 100%;
         margin-bottom: 20px;
+        color: var(--Main)
     }
+
+    p {
+        color: var(--Main)
+    }
+
+    h2 {
+        color: var(--Main)
+    }
+
 }
