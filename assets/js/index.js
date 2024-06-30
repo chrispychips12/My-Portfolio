@@ -3,8 +3,15 @@ document.getElementById('toggle-mode').addEventListener('click', function() {
     document.querySelectorAll('header, button, a, nav, p, main, .featured-project, .card, #contact, input, textarea, footer').forEach(function(element) {
         element.classList.toggle('dark-mode');
     });
-});
 
+    // Toggle button text
+    const modeButton = document.getElementById('toggle-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        modeButton.textContent = 'Light Mode';
+    } else {
+        modeButton.textContent = 'Dark Mode';
+    }
+});
 
 document.getElementById('play-game').addEventListener('click', function() {
     let userChoice = prompt("Rock, Paper, or Scissors?");
