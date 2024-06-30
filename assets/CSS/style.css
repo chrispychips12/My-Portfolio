@@ -10,7 +10,6 @@
     --DarkAccent: #3a3a3a;
 }
 
-/* Main color scheme for the portfolio */
 header {
     justify-content: space-between;
     color: var(--Main);
@@ -41,11 +40,13 @@ button {
     border: 2px solid var(--Main);
     border-radius: 5px;
     color: var(--Main);
-    padding: 10px 200px;
+    padding: 10px 20px;
     font-size: 20px;
     cursor: crosshair;
     transition: background-color 0.3s, color 0.3s, border-color 0.5s;
     letter-spacing: 1px;
+    width: 200px;
+    margin: 5px;
 }
 
 button.dark-mode {
@@ -149,7 +150,7 @@ main img:hover {
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
-    color: white; /* Ensuring all card fonts are white */
+    color: white;
     transition: background-color 0.5s, border-color 0.5s;
 }
 
@@ -160,13 +161,13 @@ main img:hover {
 .card img {
     width: 100%;
     height: auto;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, width 0.5s;
 }
 
 .card h3 {
     margin: 10px 0;
     font-size: 1.2em;
-    color: white; /* Ensuring all card fonts are white */
+    color: white;
 }
 
 .card h3.dark-mode {
@@ -175,7 +176,7 @@ main img:hover {
 
 .card a {
     margin: 5px 0;
-    color: white; /* Ensuring all card fonts are white */
+    color: white;
 }
 
 .card a.dark-mode {
@@ -209,6 +210,7 @@ input, textarea {
 
 input.dark-mode, textarea.dark-mode {
     background-color: var(--DarkPrimary);
+    border: 1px solid var(--DarkContent);
     color: var(--DarkContent);
 }
 
@@ -222,7 +224,16 @@ footer.dark-mode {
     color: var(--DarkContent);
 }
 
-/* Media queries */
+h3 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#play-game {
+    margin-top: 5px;
+}
+
 @media screen and (max-width: 1200px) {
     header h1 {
         font-size: 12vw;
@@ -231,6 +242,10 @@ footer.dark-mode {
     button {
         font-size: 2.5vw;
         padding: 1.5vw 4vw;
+    }
+
+    .card img {
+        width: 80%;
     }
 }
 
@@ -250,6 +265,10 @@ footer.dark-mode {
     h2 {
         font-size: 5vw;
         color: var(--Secondary);
+    }
+
+    .card img {
+        width: 70%;
     }
 }
 
@@ -271,5 +290,19 @@ footer.dark-mode {
 
     h2 {
         color: var(--Main);
+    }
+
+    .card img {
+        width: 60%;
+    }
+
+    h3 {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 4vw;
     }
 }
