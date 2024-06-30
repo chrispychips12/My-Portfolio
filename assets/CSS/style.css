@@ -3,25 +3,37 @@
     --Primary: #dfd3c3;
     --Secondary: #c7b198;
     --Content: #596e79;
+    --DarkMain: #121212;
+    --DarkPrimary: #1e1e1e;
+    --DarkSecondary: #272727;
+    --DarkContent: #e0e0e0;
+    --DarkAccent: #3a3a3a;
 }
 
-/*main color scheme for the portfolio */
-
+/* Main color scheme for the portfolio */
 header {
     justify-content: space-between;
     color: var(--Main);
     font-size: 100px;
     letter-spacing: 15px;
+    transition: color 0.5s, background-color 0.5s;
 }
 
 body {
     color: var(--Main);
     background: linear-gradient(to bottom, #c7b198, #596e79, #c7b198);
-    /*found the linear backgroud option through research, and by playing around 
-    with the background options on VS code, added for design purposes */
-    font-family: 'Montseratt', sans-serif;
-    /*found through w3 schools. externally linked in HTML */
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark-mode {
+    background: linear-gradient(to bottom, #333, #666, #333);
+    color: var(--DarkContent);
+}
+
+header.dark-mode {
+    color: var(--DarkContent);
 }
 
 button {
@@ -32,13 +44,14 @@ button {
     padding: 10px 200px;
     font-size: 20px;
     cursor: crosshair;
-    /* found cross hair through cursor options */
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.5s;
     letter-spacing: 1px;
 }
 
-/* This section formats the links + also adds a hover feature- 
-Here I'm using the underline feature */
+button.dark-mode {
+    border: 2px solid var(--DarkContent);
+    color: var(--DarkContent);
+}
 
 a {
     color: var(--Main);
@@ -47,6 +60,10 @@ a {
     cursor: crosshair;
     font-size: 16px;
     letter-spacing: 3px;
+}
+
+a.dark-mode {
+    color: var(--DarkContent);
 }
 
 a:hover {
@@ -59,7 +76,11 @@ nav {
     padding: 10px;
     color: var(--Main);
     word-spacing: 50px;
+    transition: color 0.5s, background-color 0.5s;
+}
 
+nav.dark-mode {
+    color: var(--DarkContent);
 }
 
 p {
@@ -67,114 +88,141 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     display: inline-block;
+    transition: color 0.5s;
+}
 
+p.dark-mode {
+    color: var(--DarkContent);
 }
 
 main {
     margin-top: 2%;
     letter-spacing: 2px;
-
+    transition: background-color 0.5s, color 0.5s;
 }
 
-/*todo: add hover feature on image 
-- looks like I can use opacity + a hover to manipulate the image */
 main img {
     width: 30%;
-    height: 'auto';
+    height: auto;
     clip-path: circle(14vw);
-    /*researched this element as my photo was way too big for the screen*/
     opacity: 75%;
+    transition: opacity 0.3s;
 }
-
 
 main img:hover {
     color: white;
     opacity: 100%;
 }
 
-
-/* This section is to add CSS styling + flex to the projects section
-I've also added a border which I'll remove for the final product 
-(This is just so I can see where each section starts and finishes) */
 #project-section {
     padding: 10px;
     gap: 20px;
     min-height: 50vh;
-    /*
-    border-style: solid; 
-    border-width: 1px;
-    */
-}
-
-#project {
+    display: flex;
     flex-wrap: wrap;
-    /*background: black; 
-    /* change background to an image, color inputted as a reminder to-do */
-
+    justify-content: center;
+    transition: background-color 0.5s, color 0.5s;
 }
 
-/* figure out how to add hover effect on images for more functionality */
-.card {
-    border-style: solid;
-    border-width: 0.5px;
-    display: inline-block;
-    width: 25%;
+.featured-project {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid var(--Secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    transition: background-color 0.5s, border-color 0.5s;
+}
 
+.featured-project.dark-mode {
+    border: 1px solid var(--DarkSecondary);
+}
+
+.card {
+    border: 1px solid var(--Secondary);
+    width: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white; /* Ensuring all card fonts are white */
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.card.dark-mode {
+    border: 1px solid var(--DarkSecondary);
 }
 
 .card img {
-    flex-wrap: wrap;
     width: 100%;
-    display: inline-block;
-    /* When the page width is less than 768px, 
-    the portfolio columns should stack and be the same height. */
+    height: auto;
+    transition: opacity 0.3s;
 }
 
-.card:hover {
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: white; /* Ensuring all card fonts are white */
+}
+
+.card h3.dark-mode {
+    color: white;
+}
+
+.card a {
+    margin: 5px 0;
+    color: white; /* Ensuring all card fonts are white */
+}
+
+.card a.dark-mode {
+    color: white;
+}
+
+.card a:hover {
     text-decoration: underline;
-    background-color: transparent;
-
 }
 
+.card img:hover {
+    opacity: 0.8;
+}
 
 #contact {
     color: var(--Main);
+    transition: color 0.5s;
 }
 
-input {
+#contact.dark-mode {
+    color: var(--DarkContent);
+}
+
+input, textarea {
     background-color: var(--Main);
     border-radius: 5px;
     border-width: 1px;
-    justify-content: space-evenly;
-
+    margin: 10px 0;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
 }
 
-textarea {
-    background-color: var(--Main);
-    border-radius: 5px;
-    border-width: 1px;
+input.dark-mode, textarea.dark-mode {
+    background-color: var(--DarkPrimary);
+    color: var(--DarkContent);
 }
 
 footer {
     padding: 100px;
-
+    color: var(--Main);
+    transition: background-color 0.5s, color 0.5s;
 }
 
-/* Media queries to change the header,
-paragraph and main sections once screen resizes smaller */
-@media screen and (max-width:900px) {
-    
+footer.dark-mode {
+    color: var(--DarkContent);
+}
 
-/* media query to change for screen sizes- used a mix of VW and %, any comments for
-polishing it up would be great*/
-
-/*You'll need to update the CSS so that it 
-contains media queries to make the page responsive. (10 points)
-When the page width is less than 768px, 
-the portfolio columns should stack and be the same height.
-
-PLEASE SEE BELOW*/
-
+/* Media queries */
 @media screen and (max-width: 1200px) {
     header h1 {
         font-size: 12vw;
@@ -188,41 +236,40 @@ PLEASE SEE BELOW*/
 
 @media screen and (max-width: 900px) {
     header {
-        color: var(--Content)
+        color: var(--Content);
     }
 
     p {
-        color: var(--Secondary)
+        color: var(--Secondary);
     }
 
     main {
-        color: var(--Secondary)
+        color: var(--Secondary);
     }
-}
+
     h2 {
         font-size: 5vw;
-        color: var(--Secondary)
+        color: var(--Secondary);
     }
 }
 
 @media screen and (max-width: 768px) {
     header h1 {
         font-size: 5vw;
-        color: var(--Main)
+        color: var(--Main);
     }
 
     .card {
         width: 100%;
         margin-bottom: 20px;
-        color: var(--Main)
+        color: var(--Main);
     }
 
     p {
-        color: var(--Main)
+        color: var(--Main);
     }
 
     h2 {
-        color: var(--Main)
+        color: var(--Main);
     }
-
 }
