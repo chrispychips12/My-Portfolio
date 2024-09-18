@@ -25,6 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 const homeController = require('./controllers/homeController');
 app.use('/', homeController);
 
+// Add this after your existing routes
+app.use((req, res) => {
+    res.status(404).render('404', { title: '404 - Page Not Found' });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 

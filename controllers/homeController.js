@@ -6,42 +6,42 @@ const journeyItems = [
         year: "2024",
         title: "Talent Sourcer @ Immutable",
         date: "2024",
-        description: "Description of your role and achievements at Immutable.",
+        description: "As a Talent Sourcer, I'm responsible for finding and attracting top-tier talent for tech companies. This involves sourcing candidates through various channels, screening resumes, and providing sourcing support and strategies to the TA function.",
         color: "#00FFFF"
     },
     {
         year: "2024",
         title: "USYD Coding Student",
         date: "2024",
-        description: "Details about your coding education at the University of Sydney.",
+        description: "Coding Bootcamp Student, learning the ropes of web development and beyond.",
         color: "#FF00FF"
     },
     {
         year: "2024",
         title: "Talent Acquisition Specialist @ Talent International",
         date: "2024 - Present",
-        description: "Your responsibilities and accomplishments in this role.",
+        description: "As a Talent Acquisition Specialist, I help companies with their TA function, supporting across various functions to improve their quality of standard and find top talent for their business.",
         color: "#00FFFF"
     },
     {
         year: "2021",
         title: "Recruitment Consultant @ Scouut",
         date: "2021 - 2024",
-        description: "Highlights of your work as a Recruitment Consultant.",
+        description: "As a recruitment consultant at Scouut, I was responsible for sourcing and recruiting top talent for various clients in the tech industry.",
         color: "#FF00FF"
     },
     {
         year: "2019",
         title: "Senior Team Lead / Sales Consultant @ ShineHub",
         date: "2019 - 2021",
-        description: "Key achievements and responsibilities in this leadership role.",
+        description: "As a Senior Team Lead / Sales Consultant at ShineHub, I was responsible for leading a team of recruiters and sales consultants, as well as managing customer relationships and ensuring the delivery of high-quality services.",
         color: "#00FFFF"
     },
     {
         year: "2018",
         title: "Senior Customer Service Specialist @ CommInsure / AIA",
         date: "2018-2019",
-        description: "Notable contributions and skills developed in this position.",
+        description: "As a senior customer service specialist, I helped customers with their insurance needs, and maintained a high level of customer satisfaction.",
         color: "#FF00FF"
     }
 ];
@@ -67,14 +67,19 @@ const groupProjects = [
 ];
 
 const techLogos = [
+    { name: "JavaScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
     { name: "HTML5", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS3", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-    { name: "JavaScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { name: "React", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Handlebars", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg" },
     { name: "Node.js", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "SQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "PostgreSQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+    { name: "Sequelize", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" },
     { name: "Git", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { name: "Python", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-    { name: "Docker", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" }
+    { name: "GitHub", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { name: "Bootstrap", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" },
+    { name: "Tailwind", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+    { name: "Express", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" }
 ];
 
 router.get('/', (req, res) => {

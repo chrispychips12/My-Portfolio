@@ -5,22 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateText(element, finalText) {
         const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         let iteration = 0;
-        
+
         const interval = setInterval(() => {
             element.innerText = finalText
                 .split("")
                 .map((letter, index) => {
-                    if(index < iteration) {
+                    if (index < iteration) {
                         return finalText[index];
                     }
                     return letters[Math.floor(Math.random() * 26)]
                 })
                 .join("");
-            
-            if(iteration >= finalText.length){ 
+
+            if (iteration >= finalText.length) {
                 clearInterval(interval);
             }
-            
+
             iteration += 1 / 3;
         }, 30);
     }
@@ -54,38 +54,37 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
     // Animate project cards
     const projectCards = gsap.utils.toArray('.project-card');
     if (projectCards.length > 0) {
         projectCards.forEach(card => {
             const title = card.querySelector('h3');
             const description = card.querySelector('p');
-            const originalTitle = title.textContent;
+            const originalTitle = title.dataset.original;
             const originalDescription = description.textContent;
 
             function shuffleText(element, originalText, duration = 2000) {
                 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 let interval = null;
                 let iteration = 0;
-                
+
                 clearInterval(interval);
-                
+
                 interval = setInterval(() => {
                     element.innerText = originalText
                         .split("")
                         .map((letter, index) => {
-                            if(index < iteration) {
+                            if (index < iteration) {
                                 return originalText[index];
                             }
                             return letters[Math.floor(Math.random() * 26)]
                         })
                         .join("");
-                    
-                    if(iteration >= originalText.length){ 
+
+                    if (iteration >= originalText.length) {
                         clearInterval(interval);
                     }
-                    
+
                     iteration += 1 / 3;
                 }, 30);
             }
@@ -94,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 shuffleText(title, originalTitle);
                 shuffleText(description, originalDescription);
             });
-
             card.addEventListener('mouseleave', () => {
                 title.textContent = originalTitle;
                 description.textContent = originalDescription;
@@ -125,28 +123,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hero section animations
-    const floatingElements = gsap.utils.toArray('.floating-element');
-    if (floatingElements.length > 0) {
-        floatingElements.forEach(element => {
-            gsap.to(element, {
-                y: "random(-30, 30)",
-                x: "random(-30, 30)",
-                rotation: "random(-15, 15)",
-                duration: "random(3, 6)",
-                repeat: -1,
-                yoyo: true,
-                ease: "power1.inOut"
-            });
-        });
-    }
+    const planets = document.querySelectorAll('.planet');
+    const heroSection = document.querySelector('#hero');
+    const stars = document.querySelector('#stars');
 
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        const heroHeight = heroSection.offsetHeight;
+        const scrollPercentage = scrollPosition / heroHeight;
+
+        planets.forEach((planet, index) => {
+            const speed = 0.2 + (index * 0.1);
+            const yPos = scrollPercentage * 100 * speed;
+            const rotation = scrollPercentage * 360 * speed;
+            planet.style.transform = `translateY(${yPos}px) rotate(${rotation}deg)`;
+        });
+
+        // Stars parallax effect
+        const starsYPos = scrollPercentage * 1000;
+        stars.style.transform = `translateY(${starsYPos}px)`;
+    });
 
     // Header scroll effect
     const header = document.querySelector('.header-scroll');
+    let lastScrollTop = 0;
+
     window.addEventListener('scroll', () => {
-        const scrollPercentage = Math.min(window.scrollY / 500, 1);
-        header.style.opacity = 1 - scrollPercentage;
-        header.classList.toggle('scrolled', window.scrollY > 0);
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const opacity = Math.max(0, 1 - scrollTop / 200);
+        header.style.opacity = opacity;
+
+        if (scrollTop > lastScrollTop) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop;
     });
 
     // Custom mouse cursor
@@ -267,20 +279,98 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Tech logo carousel
-    const carouselInner = document.querySelector('.tech-carousel-inner');
+    const carousel = document.querySelector('.tech-carousel');
+    if (carousel) {
+        const logos = Array.from(carousel.children);
+        const totalWidth = logos.reduce((acc, logo) => acc + logo.offsetWidth + 40, 0); // 40px for gap
 
-    if (carouselInner) {
-        const totalWidth = carouselInner.scrollWidth;
-        const visibleWidth = carouselInner.offsetWidth;
+        // Clone logos and append to the end
+        logos.forEach(logo => {
+            const clone = logo.cloneNode(true);
+            carousel.appendChild(clone);
+        });
 
-        gsap.to('.tech-carousel-inner', {
-            x: () => -(totalWidth - visibleWidth),
-            ease: 'none',
+        gsap.to(carousel, {
+            x: -totalWidth / 2,
             duration: 20,
+            ease: "linear",
             repeat: -1,
-            yoyo: true
+            modifiers: {
+                x: gsap.utils.unitize(x => parseFloat(x) % (totalWidth / 2))
+            }
         });
     }
 
-    // ... (other code)
+    function createFloatingElements() {
+        const container = document.querySelector('.floating-elements');
+        for (let i = 0; i < 20; i++) {
+            const element = document.createElement('div');
+            element.classList.add('floating-element');
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.animationDelay = `${Math.random() * 15}s`;
+            container.appendChild(element);
+        }
+    }
+
+    createFloatingElements();
+
+    function createStars() {
+        const container = document.querySelector('#stars');
+        const starCount = 100;
+        const stars = [];
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            container.appendChild(star);
+            stars.push(star);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            stars.forEach(star => {
+                const rect = star.getBoundingClientRect();
+                const starX = rect.left + rect.width / 2;
+                const starY = rect.top + rect.height / 2;
+
+                const dx = mouseX - starX;
+                const dy = mouseY - starY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    const angle = Math.atan2(dy, dx);
+                    const force = (100 - distance) / 10;
+                    const moveX = Math.cos(angle) * force;
+                    const moveY = Math.sin(angle) * force;
+
+                    star.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
+                } else {
+                    star.style.transform = 'translate(0, 0)';
+                }
+            });
+        });
+    }
+
+    createStars();
+
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
 });

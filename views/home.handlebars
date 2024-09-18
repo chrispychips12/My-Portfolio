@@ -1,21 +1,30 @@
 <main class="container mx-auto pt-24 mt-24 bg-color">
     <div class="vertical-progress-bar"></div>
-    <section id="hero" class="text-center min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
-        <h2 class="text-6xl font-bold mb-4 relative z-10 glow-effect">My Portfolio</h2>
-        <p class="text-xl mb-8 relative z-10">Welcome and explore</p>
-        <a href="#contact" class="bg-accent-color text-white px-6 py-3 rounded-full hover:bg-opacity-80 transition-colors relative z-10 glow-effect">Initiate Contact</a>
+    <section id="hero" class="parallax-container relative h-screen overflow-hidden flex items-center justify-center">
+        <div id="stars" class="absolute inset-0"></div>
+        <div id="planets" class="absolute inset-0">
+            <div class="planet planet-1"></div>
+            <div class="planet planet-2"></div>
+            <div class="planet planet-3"></div>
+            <div class="planet planet-4"></div>
+            <div class="planet planet-5"></div>
+        </div>
+        <div class="content-layer relative z-10 text-center">
+            <h2 class="text-6xl font-bold mb-4">My Portfolio</h2>
+            <p class="text-xl mb-8">Welcome and explore</p>
+        </div>
     </section>
 
     <section id="about" class="mt-32 relative overflow-hidden">
         <div class="parallax-bg absolute inset-0 bg-accent-color opacity-10"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-8 md:px-16">
             <h2 class="text-4xl font-bold mb-12 text-center">About Me</h2>
-            <div class="space-y-8 text-base leading-relaxed">
+            <div class="space-y-8 text-base leading-relaxed about-content">
                 <p>
                     Hello! I'm Christopher Concepcion, a passionate developer with a keen interest in creating amazing web experiences. I love turning complex problems into simple, beautiful, and intuitive designs.
                 </p>
                 <p>
-                    My journey in web development started with HTML, CSS, and JavaScript, and has since expanded to include modern frameworks and technologies. 
+                    My journey in web development is ongoing and ever-evolving, starting with HTML, CSS, and JavaScript, and has since expanded to include modern frameworks and technologies. 
                 </p>
                 <p>
                     Currently, I'm a technical recruiter and have spent the last few years understanding different technical functions as well as working with some impressive start-ups and scale-ups to understand what type of Developers they need.
@@ -27,12 +36,14 @@
         </div>
     </section>
 
-<section id="technologies" class="mt-32">
+<section id="technologies" class="mt-32 relative">
     <h2 class="text-4xl font-bold mb-12 text-center">Technologies I've Worked With</h2>
-    <div class="tech-carousel relative overflow-hidden mx-auto" style="width: 80%;">
-        <div class="tech-carousel-inner flex items-center">
+    <div class="tech-carousel-container">
+        <div class="tech-carousel">
             {{#each techLogos}}
-            <img src="{{this.url}}" alt="{{this.name}}" class="w-16 h-16 mx-4 tech-logo">
+            <div class="tech-item">
+                <img src="{{this.url}}" alt="{{this.name}}" class="tech-logo">
+            </div>
             {{/each}}
         </div>
     </div>
@@ -46,10 +57,11 @@
             <div class="project-card animate-fade-in relative overflow-hidden rounded-lg group">
                 <img src="https://placehold.co/600x400/000000/000000.png" alt="{{this.name}}" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
                 <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.name}}</h3>
+                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" data-original="{{this.name}}">{{this.name}}</h3>
                     <p class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.description}}</p>
-                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300 glow-effect">View Project</a>
+                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300">View Project</a>
                 </div>
+                <p class="project-name absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white text-center py-2 transform translate-y-0 group-hover:translate-y-full transition-transform duration-300">{{this.name}}</p>
             </div>
             {{/each}}
         </div>
@@ -62,10 +74,11 @@
             <div class="project-card animate-fade-in relative overflow-hidden rounded-lg group">
                 <img src="https://placehold.co/600x400/000000/000000.png" alt="{{this.name}}" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
                 <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.name}}</h3>
+                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" data-original="{{this.name}}">{{this.name}}</h3>
                     <p class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.description}}</p>
-                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300 glow-effect">View Project</a>
+                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300">View Project</a>
                 </div>
+                <p class="project-name absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white text-center py-2 transform translate-y-0 group-hover:translate-y-full transition-transform duration-300">{{this.name}}</p>
             </div>
             {{/each}}
         </div>
@@ -88,27 +101,32 @@
         </div>
     </section>
 
-    <section id="vertical-progress" class="mt-32 relative">
-        <div class="vertical-progress-bar"></div>
+    <section id="contact" class="mt-32 relative">
+        <h2 class="text-4xl font-bold mb-12 text-center">Contact Me</h2>
+        <div class="max-w-2xl mx-auto">
+            <form class="space-y-4">
+                <div>
+                    <label for="name" class="block mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 bg-gray-800 rounded">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 bg-gray-800 rounded">
+                </div>
+                <div>
+                    <label for="message" class="block mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full p-2 bg-gray-800 rounded"></textarea>
+                </div>
+                <button type="submit" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors">Send Message</button>
+            </form>
+        </div>
     </section>
 
-    <section id="contact" class="mt-32 mb-16">
-        <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
-        <form class="max-w-lg mx-auto">
-            <div class="mb-4">
-                <label for="name" class="block mb-2">Name</label>
-                <input type="text" id="name" name="name" required class="w-full px-3 py-2 bg-gray-800 text-white rounded-md">
-            </div>
-            <div class="mb-4">
-                <label for="email" class="block mb-2">Email</label>
-                <input type="email" id="email" name="email" required class="w-full px-3 py-2 bg-gray-800 text-white rounded-md">
-            </div>
-            <div class="mb-4">
-                <label for="message" class="block mb-2">Message</label>
-                <textarea id="message" name="message" required class="w-full px-3 py-2 bg-gray-800 text-white rounded-md h-32"></textarea>
-            </div>
-            <button type="submit" class="bg-accent-color text-white px-6 py-3 rounded-full hover:bg-opacity-80 transition-colors glow-effect">Send Message</button>
-        </form>
-    </section>
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
 
+</main>
 
