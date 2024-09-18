@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-color text-color light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Concepcion</title>
+    <link href="/css/output.css?v=1" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="/js/index.js?v=1" defer></script>
+</head>
+<body class="font-sans bg-color">
+    <header class="py-6 fixed w-full bg-color z-10 header-scroll">
+        <nav class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-2xl font-bold mb-4 md:mb-0">Christopher Concepcion</h1>
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                <li><a href="#about" class="hover:text-accent-color transition-colors"><span class="link-text">About</span></a></li>
+                <li><a href="#projects" class="hover:text-accent-color transition-colors"><span class="link-text">Projects</span></a></li>
+                <li><a href="#contact" class="hover:text-accent-color transition-colors"><span class="link-text">Contact</span></a></li>
+                <li><a href="https://www.linkedin.com/in/christopher-concepcion" target="_blank" rel="noopener noreferrer" class="hover:text-accent-color transition-colors"><span class="link-text">LinkedIn</span></a></li>
+                <li><a href="https://github.com/chrispychips12" target="_blank" rel="noopener noreferrer" class="hover:text-accent-color transition-colors"><span class="link-text">GitHub</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container mx-auto pt-24 mt-24 bg-color">
+    <div class="vertical-progress-bar"></div>
+    <section id="hero" class="parallax-container relative h-screen overflow-hidden flex items-center justify-center">
+        <div id="stars" class="absolute inset-0"></div>
+        <div id="planets" class="absolute inset-0">
+            <div class="planet planet-1"></div>
+            <div class="planet planet-2"></div>
+            <div class="planet planet-3"></div>
+            <div class="planet planet-4"></div>
+            <div class="planet planet-5"></div>
+        </div>
+        <div class="content-layer relative z-10 text-center">
+            <h2 class="text-6xl font-bold mb-4">My Portfolio</h2>
+            <p class="text-xl mb-8">Welcome and explore</p>
+        </div>
+    </section>
+
+    <section id="about" class="mt-32 relative overflow-hidden">
+        <div class="parallax-bg absolute inset-0 bg-accent-color opacity-10"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-8 md:px-16">
+            <h2 class="text-4xl font-bold mb-12 text-center">About Me</h2>
+            <div class="space-y-8 text-base leading-relaxed about-content">
+                <p>
+                    Hello! I'm Christopher Concepcion, a passionate developer with a keen interest in creating amazing web experiences. I love turning complex problems into simple, beautiful, and intuitive designs.
+                </p>
+                <p>
+                    My journey in web development is ongoing and ever-evolving, starting with HTML, CSS, and JavaScript, and has since expanded to include modern frameworks and technologies. 
+                </p>
+                <p>
+                    Currently, I'm a technical recruiter and have spent the last few years understanding different technical functions as well as working with some impressive start-ups and scale-ups to understand what type of Developers they need.
+                </p>
+                <p>
+                   Some of these companies include: Immutable, Eucalyptus, Relume, TrueState, DropBio, and many more. As I press on this journey, I look forward to helping you out in one way or another!
+                </p>
+            </div>
+        </div>
+    </section>
+
+<section id="technologies" class="mt-32 relative">
+    <h2 class="text-4xl font-bold mb-12 text-center">Technologies I've Worked With</h2>
+    <div class="tech-carousel-container">
+        <div class="tech-carousel">
+        </div>
+    </div>
+</section>
+
+
+    <section id="projects" class="mt-32">
+        <h2 class="text-4xl font-bold mb-8">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+    </section>
+
+    <section id="group-projects" class="mt-32">
+        <h2 class="text-4xl font-bold mb-8">Group Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        </div>
+    </section>
+
+    <section id="my-journey" class="mt-32 relative">
+        <h2 class="text-4xl font-bold mb-12 text-center">My Journey</h2>
+        <div class="timeline-container">
+            <div class="timeline-progress-bar"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="mt-32 relative">
+        <h2 class="text-4xl font-bold mb-12 text-center">Contact Me</h2>
+        <div class="max-w-2xl mx-auto">
+            <form class="space-y-4">
+                <div>
+                    <label for="name" class="block mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 bg-gray-800 rounded">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 bg-gray-800 rounded">
+                </div>
+                <div>
+                    <label for="message" class="block mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full p-2 bg-gray-800 rounded"></textarea>
+                </div>
+                <button type="submit" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+</main>
+
+
+    
+</body>
+</html>

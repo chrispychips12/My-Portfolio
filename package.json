@@ -3,7 +3,8 @@
   "scripts": {
     "start": "node app.js",
     "build:css": "tailwindcss -i ./public/css/main.css -o ./public/css/output.css --watch",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "node build.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
