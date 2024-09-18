@@ -4,7 +4,8 @@
     "start": "node app.js",
     "build:css": "tailwindcss -i ./public/css/main.css -o ./public/css/output.css --watch",
     "dev": "nodemon app.js",
-    "build": "node build.js"
+    "build": "node build.js",
+    "deploy": "npm run build && git add . && git commit -m 'Deploy to GitHub Pages' && git push origin gh-pages"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
