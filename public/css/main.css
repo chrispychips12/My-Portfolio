@@ -391,6 +391,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
 
 .project-card:hover {
@@ -399,30 +403,43 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
 
 .project-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: filter 0.3s ease;
+    height: 256px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    transition: opacity 0.3s ease;
 }
 
 .project-info {
+    position: absolute;
+    inset: 0;
+    background: rgba(200, 200, 200, 0.3);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-info {
+    opacity: 1;
+}
+
+.project-name {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
-    transform: translateY(100%);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    transform: translateY(0);
     transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-info {
-    transform: translateY(0);
-}
-
-.project-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+.project-card:hover .project-name {
+    transform: translateY(100%);
 }
 
 .animate-on-scroll {
@@ -444,3 +461,108 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
     border-radius: 50%;
     transition: transform 0.3s ease-out;
 }
+
+.parallax {
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-element {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+.hero-cube-container {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    perspective: 1500px;
+    z-index: -1;
+}
+
+.hero-cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 20s linear infinite;
+}
+
+.hero-cube-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.hero-cube-face.front  { transform: rotateY(0deg) translateZ(100px); }
+.hero-cube-face.back   { transform: rotateY(180deg) translateZ(100px); }
+.hero-cube-face.right  { transform: rotateY(90deg) translateZ(100px); }
+.hero-cube-face.left   { transform: rotateY(-90deg) translateZ(100px); }
+.hero-cube-face.top    { transform: rotateX(90deg) translateZ(100px); }
+.hero-cube-face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.skill-cube-container {
+    perspective: 1000px;
+    width: 150px;
+    height: 150px;
+}
+
+.skill-cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.skill-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    backface-visibility: hidden;
+}
+
+.skill-face:nth-child(1) { transform: rotateY(0deg) translateZ(75px); }
+.skill-face:nth-child(2) { transform: rotateY(90deg) translateZ(75px); }
+.skill-face:nth-child(3) { transform: rotateY(180deg) translateZ(75px); }
+.skill-face:nth-child(4) { transform: rotateY(-90deg) translateZ(75px); }
+.skill-face:nth-child(5) { transform: rotateX(90deg) translateZ(75px); }
+.skill-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); }

@@ -373,4 +373,32 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
     });
+
+    function updateCubeRotation() {
+        const cube = document.querySelector('.hero-cube');
+        if (cube) {
+            const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            const rotationDegrees = scrollPercentage * 360;
+            cube.style.transform = `rotateX(${rotationDegrees}deg) rotateY(${rotationDegrees}deg)`;
+        }
+    }
+
+    window.addEventListener('scroll', updateCubeRotation);
+
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });

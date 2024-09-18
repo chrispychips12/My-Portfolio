@@ -1,17 +1,21 @@
-<main class="container mx-auto pt-24 mt-24 bg-color">
+<main class="bg-color">
     <div class="vertical-progress-bar"></div>
-    <section id="hero" class="parallax-container relative h-screen overflow-hidden flex items-center justify-center">
-        <div id="stars" class="absolute inset-0"></div>
-        <div id="planets" class="absolute inset-0">
-            <div class="planet planet-1"></div>
-            <div class="planet planet-2"></div>
-            <div class="planet planet-3"></div>
-            <div class="planet planet-4"></div>
-            <div class="planet planet-5"></div>
+    <section id="hero" class="min-h-screen flex items-center justify-center relative parallax container mx-auto" data-speed="0.5">
+        <div class="text-center z-10">
+            <h1 class="text-6xl font-bold mb-4">Christopher Concepcion</h1>
+            <h2 class="text-4xl mb-8"></h2>
+            <a href="#contact" class="bg-accent-color text-white px-8 py-3 rounded-full hover:bg-opacity-80 transition duration-300">Get in Touch</a>
         </div>
-        <div class="content-layer relative z-10 text-center">
-            <h2 class="text-6xl font-bold mb-4">My Portfolio</h2>
-            <p class="text-xl mb-8">Welcome and explore</p>
+        <div id="stars" class="absolute inset-0"></div>
+        <div class="hero-cube-container">
+            <div class="hero-cube">
+                <div class="hero-cube-face front"></div>
+                <div class="hero-cube-face back"></div>
+                <div class="hero-cube-face right"></div>
+                <div class="hero-cube-face left"></div>
+                <div class="hero-cube-face top"></div>
+                <div class="hero-cube-face bottom"></div>
+            </div>
         </div>
     </section>
 
@@ -49,13 +53,12 @@
     </div>
 </section>
 
-
     <section id="projects" class="mt-32">
-        <h2 class="text-4xl font-bold mb-8">My Projects</h2>
+        <h2 class="text-4xl font-bold mb-12 text-center">My Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{#each myProjects}}
             <div class="project-card animate-fade-in relative overflow-hidden rounded-lg group">
-                <img src="https://placehold.co/600x400/000000/000000.png" alt="{{this.name}}" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div class="project-image w-full h-64 bg-transparent"></div>
                 <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" data-original="{{this.name}}">{{this.name}}</h3>
                     <p class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.description}}</p>
@@ -68,11 +71,11 @@
     </section>
 
     <section id="group-projects" class="mt-32">
-        <h2 class="text-4xl font-bold mb-8">Group Projects</h2>
+        <h2 class="text-4xl font-bold mb-12 text-center">Group Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             {{#each groupProjects}}
             <div class="project-card animate-fade-in relative overflow-hidden rounded-lg group">
-                <img src="https://placehold.co/600x400/000000/000000.png" alt="{{this.name}}" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div class="project-image w-full h-64 bg-transparent"></div>
                 <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" data-original="{{this.name}}">{{this.name}}</h3>
                     <p class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.description}}</p>
@@ -127,6 +130,12 @@
         <div class="floating-element"></div>
         <div class="floating-element"></div>
     </div>
+
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-accent-color text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-opacity-80">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
 
 </main>
 
