@@ -1,10 +1,13 @@
 <main class="bg-color">
     <div class="vertical-progress-bar"></div>
-    <section id="hero" class="min-h-screen flex items-center justify-center relative parallax container mx-auto" data-speed="0.5">
+    <section id="hero" class="min-h-screen flex items-center justify-center relative parallax container mx-auto"
+        data-speed="0.5">
         <div class="text-center z-10">
             <h1 class="text-6xl font-bold mb-4">Christopher Concepcion</h1>
             <h2 class="text-4xl mb-8"></h2>
-            <a href="#contact" class="bg-accent-color text-white px-8 py-3 rounded-full hover:bg-opacity-80 transition duration-300">Get in Touch</a>
+            <a href="#contact"
+                class="bg-accent-color text-white px-8 py-3 rounded-full hover:bg-opacity-80 transition duration-300">Get
+                in Touch</a>
         </div>
         <div id="stars" class="absolute inset-0"></div>
         <div class="hero-cube-container">
@@ -25,33 +28,38 @@
             <h2 class="text-4xl font-bold mb-12 text-center">About Me</h2>
             <div class="space-y-8 text-base leading-relaxed about-content">
                 <p>
-                    Hello! I'm Christopher Concepcion, a passionate developer with a keen interest in creating amazing web experiences. I love turning complex problems into simple, beautiful, and intuitive designs.
+                    Hello! I'm Christopher Concepcion, a passionate developer with a keen interest in creating amazing
+                    web experiences. I love turning complex problems into simple, beautiful, and intuitive designs.
                 </p>
                 <p>
-                    My journey in web development is ongoing and ever-evolving, starting with HTML, CSS, and JavaScript, and has since expanded to include modern frameworks and technologies. 
+                    My journey in web development is ongoing and ever-evolving, starting with HTML, CSS, and JavaScript,
+                    and has since expanded to include modern frameworks and technologies.
                 </p>
                 <p>
-                    Currently, I'm a technical recruiter and have spent the last few years understanding different technical functions as well as working with some impressive start-ups and scale-ups to understand what type of Developers they need.
+                    Currently, I'm a technical recruiter and have spent the last few years understanding different
+                    technical functions as well as working with some impressive start-ups and scale-ups to understand
+                    what type of Developers they need.
                 </p>
                 <p>
-                   Some of these companies include: Immutable, Eucalyptus, Relume, TrueState, DropBio, and many more. As I press on this journey, I look forward to helping you out in one way or another!
+                    Some of these companies include: Immutable, Eucalyptus, Relume, TrueState, DropBio, and many more.
+                    As I press on this journey, I look forward to helping you out in one way or another!
                 </p>
             </div>
         </div>
     </section>
 
-<section id="technologies" class="mt-32 relative">
-    <h2 class="text-4xl font-bold mb-12 text-center">Technologies I've Worked With</h2>
-    <div class="tech-carousel-container">
-        <div class="tech-carousel">
-            {{#each techLogos}}
-            <div class="tech-item">
-                <img src="{{this.url}}" alt="{{this.name}}" class="tech-logo">
+    <section id="technologies" class="mt-32 relative">
+        <h2 class="text-4xl font-bold mb-12 text-center">Technologies I've Worked With</h2>
+        <div class="tech-carousel-container">
+            <div class="tech-carousel">
+                {{#each techLogos}}
+                <div class="tech-item">
+                    <img src="{{this.url}}" alt="{{this.name}}" class="tech-logo">
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="projects" class="mt-32">
         <h2 class="text-4xl font-bold mb-12 text-center">My Projects</h2>
@@ -59,12 +67,20 @@
             {{#each myProjects}}
             <div class="project-card animate-fade-in relative overflow-hidden rounded-lg group">
                 <div class="project-image w-full h-64 bg-transparent"></div>
-                <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" data-original="{{this.name}}">{{this.name}}</h3>
-                    <p class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.description}}</p>
-                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300">View Project</a>
+                <div
+                    class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                        data-original="{{this.name}}">{{this.name}}</h3>
+                    <p
+                        class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        {{this.description}}</p>
+                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer"
+                        class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300">View
+                        Project</a>
                 </div>
-                <p class="project-name absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white text-center py-2 transform translate-y-0 group-hover:translate-y-full transition-transform duration-300">{{this.name}}</p>
+                <p
+                    class="project-name absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white text-center py-2 transform translate-y-0 group-hover:translate-y-full transition-transform duration-300">
+                    {{this.name}}</p>
             </div>
             {{/each}}
         </div>
@@ -76,12 +92,20 @@
             {{#each groupProjects}}
             <div class="project-card animate-fade-in relative overflow-hidden rounded-lg group">
                 <div class="project-image w-full h-64 bg-transparent"></div>
-                <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" data-original="{{this.name}}">{{this.name}}</h3>
-                    <p class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">{{this.description}}</p>
-                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300">View Project</a>
+                <div
+                    class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                        data-original="{{this.name}}">{{this.name}}</h3>
+                    <p
+                        class="text-center mb-4 text-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        {{this.description}}</p>
+                    <a href="{{this.url}}" target="_blank" rel="noopener noreferrer"
+                        class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors transform scale-0 group-hover:scale-100 transition-transform duration-300">View
+                        Project</a>
                 </div>
-                <p class="project-name absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white text-center py-2 transform translate-y-0 group-hover:translate-y-full transition-transform duration-300">{{this.name}}</p>
+                <p
+                    class="project-name absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white text-center py-2 transform translate-y-0 group-hover:translate-y-full transition-transform duration-300">
+                    {{this.name}}</p>
             </div>
             {{/each}}
         </div>
@@ -120,7 +144,9 @@
                     <label for="message" class="block mb-2">Message</label>
                     <textarea id="message" name="message" rows="4" class="w-full p-2 bg-gray-800 rounded"></textarea>
                 </div>
-                <button type="submit" class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors">Send Message</button>
+                <button type="submit"
+                    class="bg-accent-color text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition-colors">Send
+                    Message</button>
             </form>
         </div>
     </section>
@@ -131,11 +157,11 @@
         <div class="floating-element"></div>
     </div>
 
-    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-accent-color text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-opacity-80">
+    <button id="back-to-top"
+        class="hidden fixed bottom-8 right-8 bg-accent-color text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-opacity-80">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
     </button>
 
 </main>
-
