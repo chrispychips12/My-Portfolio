@@ -12,11 +12,10 @@ const homeTemplate = Handlebars.compile(homeSource);
 
 // Compile your partials
 const partialsDir = path.join(__dirname, 'views', 'partials');
-fs.readdirSync(partialsDir).forEach(file => {
-    const partialName = path.parse(file).name;
-    const partialContent = fs.readFileSync(path.join(partialsDir, file), 'utf8');
-    Handlebars.registerPartial(partialName, partialContent);
-});
+const headerSource = fs.readFileSync(path.join(__dirname, 'views', 'partials', 'header.handlebars'), 'utf8');
+Handlebars.registerPartial('header', headerSource);
+const footerSource = fs.readFileSync(path.join(__dirname, 'views', 'partials', 'footer.handlebars'), 'utf8');
+Handlebars.registerPartial('footer', footerSource);
 
 // Function to write HTML files
 const writeHTMLFile = (filename, content) => {
@@ -28,9 +27,12 @@ const writeHTMLFile = (filename, content) => {
 };
 
 // Render the home page
-const data = require('./models/projectModel');
-const homeContent = homeTemplate(data);
+const homeContent = homeTemplate({});
 const fullHomeContent = layoutTemplate({ body: homeContent });
 writeHTMLFile('index.html', fullHomeContent);
+
+// Render the about page
+const aboutContent = layoutTemplate({ body: '<h1>About Chris</h1><p>This is the about page.</p>' });
+writeHTMLFile('about.html', aboutContent);
 
 console.log('Build complete!');
