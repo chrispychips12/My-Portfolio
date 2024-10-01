@@ -1,3 +1,5 @@
+console.log('index.js loaded');
+
 document.addEventListener('DOMContentLoaded', function() {
 
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
