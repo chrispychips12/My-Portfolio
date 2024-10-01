@@ -2,9 +2,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build:css": "tailwindcss -i ./public/css/main.css -o ./public/css/output.css --minify",
+    "build:css": "npx tailwindcss -i ./public/css/main.css -o ./dist/css/output.css --minify",
     "build:html": "node build.js",
-    "build": "npm run build:html && npm run build:css",
+    "copy:js": "cp -r ./public/js ./dist/js",
+    "build": "npm run build:html && npm run build:css && npm run copy:js",
     "dev": "nodemon app.js"
   },
   "devDependencies": {
