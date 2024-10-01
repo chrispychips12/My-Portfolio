@@ -1,5 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
 
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.error('GSAP or ScrollTrigger is not loaded');
+        return;
+    }
 
     // New animateText function
     function animateText(element, finalText) {
@@ -41,17 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = gsap.utils.toArray('section');
     if (sections.length > 0) {
         sections.forEach(section => {
-            gsap.from(section, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse'
-                }
-            });
+            try {
+                gsap.from(section, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            } catch (error) {
+                console.error('Error animating section:', error);
+            }
         });
     }
     // Animate project cards
