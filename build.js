@@ -30,7 +30,8 @@ const writeHTMLFile = (filename, content) => {
 };
 
 // Render the home page
-const homeContent = homeTemplate({ myProjects: require('./models/projectModel').myProjects });
+const data = require('./models/projectModel');
+const homeContent = homeTemplate(data);
 const fullHomeContent = layoutTemplate({ body: homeContent });
 writeHTMLFile('index.html', fullHomeContent);
 
