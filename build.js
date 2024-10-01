@@ -1,6 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
+const { myProjects, groupProjects, techLogos, journeyItems } = require('./models/projectModel');
+
+// Function to copy files
+const copyFile = (src, dest) => {
+    fs.copyFileSync(src, dest);
+};
+
+// Function to copy directories
+const copyDirectory = (src, dest) => {
+    if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest);
+    }
+    const entries = fs.readdirSync(src, { withFileTypes: true });
+    for (let entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+        entry.isDirectory() ? copyDirectory(srcPath, destPath) : copyFile(srcPath, destPath);
+    }
+};
 
 // Read and compile your main layout
 const layoutSource = fs.readFileSync(path.join(__dirname, 'views', 'layouts', 'main.handlebars'), 'utf8');
@@ -12,9 +31,9 @@ const homeTemplate = Handlebars.compile(homeSource);
 
 // Compile your partials
 const partialsDir = path.join(__dirname, 'views', 'partials');
-const headerSource = fs.readFileSync(path.join(__dirname, 'views', 'partials', 'header.handlebars'), 'utf8');
+const headerSource = fs.readFileSync(path.join(partialsDir, 'header.handlebars'), 'utf8');
 Handlebars.registerPartial('header', headerSource);
-const footerSource = fs.readFileSync(path.join(__dirname, 'views', 'partials', 'footer.handlebars'), 'utf8');
+const footerSource = fs.readFileSync(path.join(partialsDir, 'footer.handlebars'), 'utf8');
 Handlebars.registerPartial('footer', footerSource);
 
 // Function to write HTML files
@@ -27,12 +46,18 @@ const writeHTMLFile = (filename, content) => {
 };
 
 // Render the home page
-const homeContent = homeTemplate({});
+const homeContent = homeTemplate({
+    myProjects: myProjects,
+    groupProjects: groupProjects,
+    techLogos: techLogos,
+    journeyItems: journeyItems
+});
 const fullHomeContent = layoutTemplate({ body: homeContent });
 writeHTMLFile('index.html', fullHomeContent);
 
-// Render the about page
-const aboutContent = layoutTemplate({ body: '<h1>About Chris</h1><p>This is the about page.</p>' });
-writeHTMLFile('about.html', aboutContent);
+// Copy models to dist directory
+const modelsSrcDir = path.join(__dirname, 'models');
+const modelsDestDir = path.join(__dirname, 'dist', 'models');
+copyDirectory(modelsSrcDir, modelsDestDir);
 
 console.log('Build complete!');
